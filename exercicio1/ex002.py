@@ -4,6 +4,6 @@ if peso > 50:
     multa = excesso * 4
     print("Peso Total: ", peso)
     print("Excesso: ", excesso)
-    print("Multa: ", multa)
+    print("Multa: R$", multa)
 else:
     print("Não há excesso de peso!")
