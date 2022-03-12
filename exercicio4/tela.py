@@ -214,22 +214,6 @@ class Ui_MainWindow(object):
         self.retranslateUi(MainWindow)
         QtCore.QMetaObject.connectSlotsByName(MainWindow)
 
-    def retranslateUi(self, MainWindow):
-        _translate = QtCore.QCoreApplication.translate
-        MainWindow.setWindowTitle(_translate("MainWindow", "MainWindow"))
-        self.label.setText(_translate("MainWindow", "CADASTRO"))
-        self.label_2.setText(_translate("MainWindow", "Nome:"))
-        self.label_3.setText(_translate("MainWindow", "CPF:"))
-        self.label_4.setText(_translate("MainWindow", "Endereço:"))
-        self.label_5.setText(_translate("MainWindow", "Data de Nascimento:"))
-        self.pushButton.setText(_translate("MainWindow", "Cadastrar!"))
-        self.label_6.setText(_translate("MainWindow", "BUSCA"))
-        self.label_7.setText(_translate("MainWindow", "CPF:"))
-        self.pushButton_2.setText(_translate("MainWindow", "Buscar!"))
-        self.label_8.setText(_translate("MainWindow", "Nome:"))
-        self.label_9.setText(_translate("MainWindow", "Endereço:"))
-        self.label_10.setText(_translate("MainWindow", "Data de Nascimento:"))
-
         '''Alterações'''
         self.cad = Cadastro()
         self.pushButton.clicked.connect(self.botaoCadastra)
@@ -240,7 +224,7 @@ class Ui_MainWindow(object):
         cpf = self.lineEdit_2.text()
         end = self.lineEdit_3.text()
         dataNasc = self.lineEdit_8.text()
-        if not(nome == '' or end == '' or cpf == '' or dataNasc == ''):
+        if not(nome == '' or cpf == '' or end == '' or dataNasc == ''):
             p = Pessoa(nome, cpf, end, dataNasc)
             if (self.cad.cadastrar(p)):
                 QMessageBox.information(None, 'POO2', 'Cadastro realizado!')
@@ -262,6 +246,22 @@ class Ui_MainWindow(object):
             self.lineEdit_7.setText(p.dataNasc)
         else:
             QMessageBox.information(None, 'POO2', 'CPF não cadastrado!')
+
+    def retranslateUi(self, MainWindow):
+        _translate = QtCore.QCoreApplication.translate
+        MainWindow.setWindowTitle(_translate("MainWindow", "MainWindow"))
+        self.label.setText(_translate("MainWindow", "CADASTRO"))
+        self.label_2.setText(_translate("MainWindow", "Nome:"))
+        self.label_3.setText(_translate("MainWindow", "CPF:"))
+        self.label_4.setText(_translate("MainWindow", "Endereço:"))
+        self.label_5.setText(_translate("MainWindow", "Data de Nascimento:"))
+        self.pushButton.setText(_translate("MainWindow", "Cadastrar!"))
+        self.label_6.setText(_translate("MainWindow", "BUSCA"))
+        self.label_7.setText(_translate("MainWindow", "CPF:"))
+        self.pushButton_2.setText(_translate("MainWindow", "Buscar!"))
+        self.label_8.setText(_translate("MainWindow", "Nome:"))
+        self.label_9.setText(_translate("MainWindow", "Endereço:"))
+        self.label_10.setText(_translate("MainWindow", "Data de Nascimento:"))
 
 
 if __name__ == "__main__":

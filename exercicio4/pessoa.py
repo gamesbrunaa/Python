@@ -1,11 +1,11 @@
 class Pessoa:
 
-    __slots__ = ['_nome', '_end', '_cpf', '_dataNasc']
+    __slots__ = ['_nome', '_cpf', '_end', '_dataNasc']
 
-    def __init__(self, nome, end, cpf, dataNasc):
+    def __init__(self, nome, cpf, end, dataNasc):
         self._nome = nome
-        self._end = end
         self._cpf = cpf
+        self._end = end
         self._dataNasc = dataNasc
 
     @property
@@ -13,12 +13,12 @@ class Pessoa:
         return self._nome
 
     @property
-    def end(self):
-        return self._end
-
-    @property
     def cpf(self):
         return self._cpf
+
+    @property
+    def end(self):
+        return self._end
 
     @property
     def dataNasc(self):
