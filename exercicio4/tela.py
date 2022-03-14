@@ -224,7 +224,7 @@ class Ui_MainWindow(object):
         cpf = self.lineEdit_2.text()
         end = self.lineEdit_3.text()
         dataNasc = self.lineEdit_8.text()
-        if not(nome == '' or cpf == '' or end == '' or dataNasc == ''):
+        if (nome != '' and cpf != '' and end != '' and dataNasc != ''):
             p = Pessoa(nome, cpf, end, dataNasc)
             if (self.cad.cadastrar(p)):
                 QMessageBox.information(None, 'POO2', 'Cadastro realizado!')
