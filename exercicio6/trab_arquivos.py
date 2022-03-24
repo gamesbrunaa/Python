@@ -1,28 +1,26 @@
-import os
+import collections
+from collections import Counter
 
 a = input("Digite o nome do arquivo: ")
 arquivo = open(a, 'r')
 palavras = []
-p = []
-vezes = []
+mais_repetidas = []
+
+def repetir(palavras):
+    repetidas = []
+    repetidas = (Counter(palavras).most_common(3))
+    return repetidas
 
 for linha in arquivo:
-    linha_palavra = linha.lower().replace(',', '').replace('.', '').replace('?', '').replace('-', '').replace(':','')
-    for x in linha_palavra:
-        palavras.append(x)
+    linha = linha.strip()
+    linha = linha.lower()
+    palavras = linha.split(" ") 
 
-for y in range(0, 2):
-    for i in range(0, len(palavras)):
-        cont = 1
-        for j in range(i+1, len(palavras)):
-            if(palavras[i] == palavras[j]):
-                cont = cont + 1
-        if (cont > vezes):
-            vezes[y] = cont
-            p[y] = palavras[i]
-    cont = 0
-
-for y in range(0, 2):
-    print(p[y], ': ', vezes[y])
-
+mais_repetidas = repetir(palavras)
+cont = 0 
+while (cont < 3):
+    x, y = mais_repetidas[cont]
+    print(x, ':', y)
+    cont += 1
+    
 arquivo.close()
