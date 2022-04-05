@@ -47,7 +47,7 @@ executando_query(conexao, criando_tabela1)
 
 nome = 'bruna'
 email = 'gamessbrunaa'
-inserindo_tabela1 = (f'INSERT INTO usuarios (id, nome, email) VALUES (14, "{nome}", "{email}")')
+inserindo_tabela1 = (f'INSERT INTO usuarios (id, nome, email) VALUES (15, "{nome}", "{email}")')
 executando_query(conexao, inserindo_tabela1)
 
 q1 = """SELECT * FROM usuarios;"""
