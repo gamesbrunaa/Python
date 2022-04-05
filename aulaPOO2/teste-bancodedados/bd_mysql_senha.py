@@ -10,10 +10,12 @@ senha = 'teste'
 email = 'gamessbrunaa@gmail.com'
 
 cursor.execute(sql)
-for x in range(5):
-    cursor.execute('INSERT INTO usuarios_senha (nome, senha, email) VALUES (%s, MD5(%s), %s)', (nome, senha, email))
+cursor.execute("INSERT INTO usuarios_senha (nome, senha, email) VALUES (%s, MD5(%s), %s)", (nome, senha, email))
 
-cursor.execute('SELECT * FROM usuarios_senha WHERE nome = %s AND senha = MD5(%s)', (nome, senha))
+cursor.execute("SELECT * FROM usuarios_senha WHERE nome = %s AND senha = MD5(%s)", (nome, senha))
 
 for c in cursor:
     print(c)
+
+conexao.commit()
+conexao.close()

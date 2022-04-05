@@ -47,13 +47,10 @@ executando_query(conexao, criando_tabela1)
 
 nome = 'bruna'
 email = 'gamessbrunaa'
-inserindo_tabela1 = (f'INSERT INTO usuarios (id, nome, email) VALUES (15, "{nome}", "{email}")')
+inserindo_tabela1 = (f'INSERT INTO usuarios (nome, email) VALUES ("{nome}", "{email}")')
 executando_query(conexao, inserindo_tabela1)
 
 q1 = """SELECT * FROM usuarios;"""
 results = lendo_dados(conexao, q1)
 for result in results:
     print(result)
-
-criando_tabela2 = """CREATE TABLE IF NOT EXISTS usuarios_senha (id integer AUTO_INCREMENT PRIMARY KEY, nome text NOT NULL, senha VARCHAR(32) NOT NULL, email text NOT NULL);"""
-executando_query(conexao, criando_tabela2)
